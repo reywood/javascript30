@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('Hello world!');
+
+    // Interpolated
+    console.log('Hello %s!', 'world');
+
+    // Styled
+    console.log('%cHello world!', 'font-size: 20px; color: red; text-shadow: 2px 2px 5px blue');
+
+    // warning!
+    console.warn('Warning world!');
+
+    // Error :|
+    console.error('Error world!');
+
+    // Info
+    console.info('Info world!');
+
+    // Testing
+    console.assert(1 === 2, 'Equality failed!');
+
+    // clearing
+    // console.clear();
+
+    // Viewing DOM Elements
+    const p = document.querySelector('p');
+    console.log(p);
+    console.dir(p);
+
+    // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(dog.name);
+      console.log(`${dog.name} is ${dog.age}`);
+      console.groupEnd(dog.name);
+    });
+
+    // counting
+    console.count('foo');
+    console.count('foo');
+    console.count('bar');
+    console.count('foo');
+    console.count('foo');
+    console.count('bar');
+    console.count('foo');
+    console.count('foo');
+    console.count('bar');
+    console.count('bar');
+
+    // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/reywood')
+      .then(response => response.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      })
+
+    // table
+    console.table(dogs);
+
+  </script>
+</body>
+</html>
