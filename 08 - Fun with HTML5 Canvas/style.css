@@ -1,0 +1,15 @@
+html,
+body {
+    margin: 0;
+}
+
+.controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#draw {
+    width: 100vw;
+    height: 100vh;
+}
