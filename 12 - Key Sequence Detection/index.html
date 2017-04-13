@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+const UP = 38;
+const DOWN = 40;
+const LEFT = 37;
+const RIGHT = 39;
+const A = 65;
+const B = 66;
+const ENTER = 13;
+
+const requiredCode = [
+    UP,
+    UP,
+    DOWN,
+    DOWN,
+    LEFT,
+    RIGHT,
+    LEFT,
+    RIGHT,
+    A,
+    B,
+    ENTER
+];
+const enteredCode = [];
+
+window.addEventListener('keyup', (e) => {
+    enteredCode.push(e.keyCode);
+    enteredCode.splice(0, Math.max(0, enteredCode.length - requiredCode.length));
+    if (enteredCode.join(',') === requiredCode.join(',')) {
+        cornify_add()
+    }
+});
+</script>
+</body>
+</html>
