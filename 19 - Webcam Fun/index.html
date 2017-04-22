@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Get User Media Code Along!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="photobooth">
+    <div class="controls">
+      <button class="take-photo">Take Photo</button>
+      <div class="rgb">
+        <label for="rmin">Red Min:</label>
+        <input type="range" min=0 max=255 value="51" name="rmin">
+        <label for="rmax">Red Max:</label>
+        <input type="range" min=0 max=255 value="97" name="rmax">
+
+        <br>
+
+        <label for="gmin">Green Min:</label>
+        <input type="range" min=0 max=255 value="51" name="gmin">
+        <label for="gmax">Green Max:</label>
+        <input type="range" min=0 max=255 value="138" name="gmax">
+
+        <br>
+
+        <label for="bmin">Blue Min:</label>
+        <input type="range" min=0 max=255 value="0" name="bmin">
+        <label for="bmax">Blue Max:</label>
+        <input type="range" min=0 max=255 value="127" name="bmax">
+      </div>
+    </div>
+
+    <div class="photo-container">
+        <canvas class="photo"></canvas>
+    </div>
+    <!-- <video class="player"></video> -->
+    <div class="strip"></div>
+  </div>
+
+  <audio class="snap" src="http://wesbos.com/demos/photobooth/snap.mp3" hidden></audio>
+
+  <script src="effects.js"></script>
+  <script src="scripts.js"></script>
+
+</body>
+</html>
