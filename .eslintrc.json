@@ -10,6 +10,9 @@
     "env": {
         "browser": true
     },
+    "globals": {
+        "google": true
+    },
     "rules": {
         "indent": ["error", 4],
         "no-console": 0,
